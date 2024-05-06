@@ -1,0 +1,20 @@
+<wpml-config>
+    <custom-fields>
+        <!--Listings-->
+        <custom-field action="copy">price</custom-field>
+        <custom-field action="copy">bedrooms</custom-field>
+        <custom-field action="copy">bathrooms</custom-field>
+        <custom-field action="copy">half_baths</custom-field>
+        <custom-field action="copy">currency</custom-field>
+        <custom-field action="copy">avaliable</custom-field>
+        <custom-field action="copy">furniture</custom-field>
+        <custom-field action="copy">construction</custom-field>
+        <custom-field action="copy">lot_area</custom-field>
+        <custom-field action="copy">view</custom-field>
+        <custom-field action="copy">featured_listing</custom-field>
+        <custom-field action="copy">listing_gallery</custom-field>
+        <custom-field action="copy">map</custom-field>
+        <!--Desarrollos-->
+        <custom-field action="copy">gallery</custom-field>
+    </custom-fields>
+</wpml-config>
