@@ -31,14 +31,16 @@
 <!-- 25 años de xp -->
 <div class="row justify-content-center mb-5">
 
-    <div class="col-12 col-lg-3 fs-1 fw-semibold text-center text-lg-start mb-5 mb-lg-0">
+    <div class="col-3 ps-0 bg-red align-self-center py-5 d-block d-lg-none"></div>
+
+    <div class="col-9 col-lg-3 fs-1 fw-semibold mb-0">
         <div style="line-height:1;">
             <span style="font-size:100px;">25</span> <span class="text-red"><?php pll_e('años') ?></span>
         </div>
         <div><?php pll_e('de experiencia') ?></div>
     </div>
 
-    <div class="col-12 col-lg-7 p-3 p-lg-5">
+    <div class="col-12 col-lg-7 p-3 p-lg-5 mt-5 mt-lg-0">
         <h3 class="fw-normal"><?php pll_e('¿Quiénes somos?') ?></h3>
         <p class="fs-5 fw-light"><?php pll_e('Somos una inmobiliaria con 25 años de experiencia que te orientará y acompañará en todo el proceso de la compra, venta y/o renta de tu bien inmueble, para que puedas obtener el mayor provecho en términos de tiempo y dinero.') ?></p>
     </div>

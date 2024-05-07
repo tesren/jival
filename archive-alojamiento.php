@@ -4,13 +4,12 @@
 
         <?php if ( have_posts() ): ?>
 
-            <div class="py-5 mb-5" style="background-image:url('<?= get_template_directory_uri().'/assets/images/forest.webp' ?>');">
+            <div class="py-5 mb-6" style="background-image:url('<?= get_template_directory_uri().'/assets/images/forest.webp' ?>');">
                 <h1 class="fs-1 text-white fw-bold text-center mb-0 fw-light">
                     <?php pll_e('Propiedades en');?> <strong><?php pll_e('renta');?></strong>
                 </h1>
             </div>
 
-            <div class="mb-5 container"><?= get_search_form() ?></div>
 
             <div class="container row justify-content-center mb-6">
 

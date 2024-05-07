@@ -120,18 +120,14 @@ function listing_register_meta_boxes( $meta_boxes ) {
             [
                 'name'            => 'Moneda',
                 'id'              => 'currency',
-                'type'            => 'select',
+                'type'            => 'radio',
+                'required'=> true,
+
                 // Array of 'value' => 'Label' pairs
                 'options'         => array(
                     'USD'       => 'USD',
                     'MXN'       => 'MXN',
                 ),
-                // Allow to select multiple value?
-                'multiple'        => false,
-                // Placeholder text
-                'placeholder'     => 'Seccione la moneda',
-                // Display "Select All / None" button?
-                'select_all_none' => false,
             ],
             [
                     'name'       => 'Tipo propiedad',

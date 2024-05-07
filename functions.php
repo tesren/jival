@@ -76,6 +76,9 @@ function change_my_title( $title ){
 	elseif( $title == 'Archivos: <span>Alojamiento</span>' ){
 		$title = "Renta de Propiedades";
 	}
+	elseif( $title == 'Archivos: <span>Desarrollos</span>' ){
+		$title = "Desarrollos inmobiliarios en la Riviera Maya";
+	}
 
     return $title;
 }

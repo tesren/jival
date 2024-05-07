@@ -41,7 +41,7 @@
 </div>
 
 <div class="row justify-content-evenly mb-6">
-    <div class="col-12 col-lg-5 align-self-center">
+    <div class="col-12 col-lg-5 align-self-center order-2 order-lg-1">
         <ul>
             <li><?php pll_e('Hacemos la renovación del contrato cuando la vigencia del mismo termine y verificamos el estado físico de la propiedad informándole al propietario.') ?></li>
             <li><?php pll_e('Recibimos la propiedad cuando el inquilino la entregue verificando el estado físico de la misma, así como, los pagos de los servicios al corriente, y en su momento si procede a la devolución del depósito.') ?></li>
@@ -51,7 +51,7 @@
         </ul>
     </div>
 
-    <div class="col-12 col-lg-4 d-none d-lg-block">
+    <div class="col-12 col-lg-4 order-1 order-lg-2 mb-3 mb-lg-0">
         <img src="<?= get_template_directory_uri() ?>/assets/images/admin-rent.webp" alt="Administración de rentas en Jival Bienes Raíces" class="w-100">
     </div>
 </div>

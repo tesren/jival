@@ -27,12 +27,18 @@
     get_header();
 ?>
 
-<div class="row bg-red mb-6">
+<!-- Inicio -->
+<div class="row bg-red mb-0 position-relative">
 
-    <div class="col-12 col-lg-3 bg-red py-5 px-3 px-lg-5 align-self-center">
+    <div class="col-12 col-lg-3 bg-red py-5 px-3 px-lg-5 align-self-center d-none d-lg-block">
         <h1 class="fw-light"><span class="fw-semibold"><?php pll_e('Invierte') ?></span> <?php pll_e('en las cañadas country club') ?></h1>
         <hr class="opacity-100">
         <div class="fs-1" style="line-height:1;"> <span style="font-size:100px;">25</span> <?php pll_e('años de experiencia') ?> </div>
+    </div>
+
+    <div class="position-absolute bottom-0 start-0 w-100 py-2 px-5 bg-red z-3 mb-5 d-block d-lg-none" style="opacity:0.85;">
+        <div class="fs-1 fw-light lh-1"><span class="fw-semibold"><?php pll_e('Invierte') ?></span> <?php pll_e('en las cañadas country club') ?></div>
+        <hr class="opacity-100 my-2">
     </div>
 
     <div class="col-12 col-lg-9 px-0">
@@ -40,23 +46,22 @@
             <div class="splide__track">
                 <ul class="splide__list">
                     <li class="splide__slide">
-                        <img src="<?= get_template_directory_uri() ?>/assets/images/jival-home-1.webp" alt="Jival Bienes Raíces" class="w-100">
+                        <img src="<?= get_template_directory_uri()?>/assets/images/jival-home-1.webp" alt="Jival Bienes Raíces" class="w-100" style="min-height:55vh; object-fit:cover;">
                     </li>
                     <li class="splide__slide">
-                        <img src="<?= get_template_directory_uri() ?>/assets/images/jival-home-2.webp" alt="Jival Bienes Raíces" class="w-100">
+                        <img src="<?= get_template_directory_uri()?>/assets/images/jival-home-2.webp" alt="Jival Bienes Raíces" class="w-100" style="min-height:55vh; object-fit:cover;">
                     </li>
                     <li class="splide__slide">
-                        <img src="<?= get_template_directory_uri() ?>/assets/images/jival-home-3.webp" alt="Jival Bienes Raíces" class="w-100">
+                        <img src="<?= get_template_directory_uri()?>/assets/images/jival-home-3.webp" alt="Jival Bienes Raíces" class="w-100" style="min-height:55vh; object-fit:cover;">
                     </li>
                 </ul>
             </div>
         </section>
     </div>
+</div>
 
-    <div class="col-12 bg-light text-center py-3">
-        <h2 class="fw-light text-blue fs-3 mb-0"><?php pll_e('Somos expertos y estamos establecidos en este hermoso fraccionamiento') ?></h2>
-    </div>
-
+<div class="bg-light text-center p-3 mb-5">
+    <h2 class="fw-light text-blue fs-3 mb-0"><?php pll_e('Somos expertos y estamos establecidos en este hermoso fraccionamiento') ?></h2>
 </div>
 
 <div class="text-center mb-6">
@@ -288,7 +293,7 @@
 <!-- Riviera Maya -->
 <section class="position-relative">
 
-    <img src="<?= get_template_directory_uri() ?>/assets/images/riviera-maya.webp" alt="Desarrollos en venta en la Riviera Maya - Jival Bienes Raíces" class="w-100">
+    <img src="<?= get_template_directory_uri() ?>/assets/images/riviera-maya.webp" alt="Desarrollos en venta en la Riviera Maya - Jival Bienes Raíces" class="w-100" style="min-height:55vh; object-fit:cover;">
 
     <div class="fondo-azul"></div>
     
@@ -307,18 +312,18 @@
 <!-- 25 años de exp -->
 <div class="row justify-content-center justify-content-lg-between my-6">
 
-    <div class="col-12 col-lg-3 ps-0 bg-red align-self-center py-5 d-none d-lg-block"></div>
+    <div class="col-3 col-lg-3 ps-0 bg-red align-self-center py-5 "></div>
 
-    <div class="col-12 col-lg-3 fs-1 fw-semibold">
+    <div class="col-9 col-lg-3 fs-1 fw-semibold">
         <div style="line-height:1;">
             <span style="font-size:100px;">25</span> <span class="text-red"><?php pll_e('años') ?></span>
         </div>
         <div><?php pll_e('de experiencia') ?></div>
     </div>
 
-    <div class="col-12 col-lg-4">
+    <div class="col-12 col-lg-4 mt-4 mt-lg-0 text-center text-lg-start">
         <p class="fs-5 fw-light"><?php pll_e('Somos una inmobiliaria con') ?> <strong><?php pll_e('25 años de experiencia que te orientará y acompañará') ?></strong> <?php pll_e('en todo el proceso de la compra, venta y/o renta de tu bien inmueble.') ?></p>
-        <a href="#" class="btn btn-outline-danger rounded-0">
+        <a href="#contact" class="btn btn-outline-danger rounded-0 fs-5 px-5">
             <?php pll_e('Contactar') ?>
         </a>
     </div>

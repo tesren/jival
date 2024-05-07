@@ -8,7 +8,6 @@ if(featuredListings){
   featuredListings= new Splide( '#featured-listings', {
     perPage: 3,
     perMove: 1,
-    loop: true,
     padding: '15px',
     pagination: false,
     breakpoints: {
@@ -31,7 +30,6 @@ if(featuredRentals){
   featuredRentals= new Splide( '#featured-rentals', {
     perPage: 3,
     perMove: 1,
-    loop: true,
     padding: '15px',
     pagination: false,
     breakpoints: {
@@ -54,12 +52,37 @@ if(homeGallery){
   homeGallery= new Splide( '#home-gallery', {
     perPage: 1,
     perMove: 1,
-    loop: true,
+    type   : 'loop',
     pagination: true,
   } );
   
   homeGallery.mount();
 }
+
+let model_gallery = document.getElementById('model_gallery');
+
+if(model_gallery){
+  model_gallery = new Splide( '#model_gallery', {
+    type   : 'loop',
+    drag   : 'free',
+    focus  : 'center',
+    perPage: 4,
+    pagination: false,
+    autoplay: 'play',
+    breakpoints: {
+      640: {
+        perPage: 2,
+      },
+      480: {
+        perPage: 1,
+        padding: '0px',
+      },
+    },
+  } );
+  
+  model_gallery.mount();
+}
+
 
 const form_inputs = document.getElementById('searchform');
 
