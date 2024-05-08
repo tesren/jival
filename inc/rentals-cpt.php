@@ -102,6 +102,7 @@ function rentals_register_meta_boxes( $meta_boxes ) {
                 'id'    => 'price',
                 'type'  => 'number',
                 'size'    => 30,
+                'required'=> true
             ],
             [
                 'name'  => 'Precio por mes',
@@ -137,6 +138,7 @@ function rentals_register_meta_boxes( $meta_boxes ) {
                 'id'    => 'bedrooms',
                 'type'  => 'number',
                 'size' => 30,
+                'required'=> true
             ],
             [
                 'name'  => 'Baños',
@@ -144,20 +146,16 @@ function rentals_register_meta_boxes( $meta_boxes ) {
                 'id'    => 'bathrooms',
                 'type'  => 'number',
                 'size' => 30,
+                'step' => 0.5
             ],
-            [
-                'name'  => 'Medios Baños',
-                'desc'  => 'Solo números',
-                'id'    => 'half_baths',
-                'type'  => 'number',
-                'size' => 30,
-            ],
+            
             [
                 'name'  => 'Huéspedes',
                 'desc'  => 'Cantidad máxima de personas admitidas',
                 'id'    => 'guests',
                 'type'  => 'number',
                 'size' => 30,
+                'required'=> true
             ],
             
             [
@@ -189,8 +187,9 @@ function rentals_register_meta_boxes( $meta_boxes ) {
         'fields' => [
             [
                 'id'               => 'listing_gallery',
-                'name'             => 'Image upload',
+                'name'             => 'Imagenes del alojamiento',
                 'type'             => 'image_advanced',
+                'required'=> true,
 
                 // Delete file from Media Library when remove it from post meta?
                 // Note: it might affect other posts if you use same file for multiple posts
@@ -240,7 +239,8 @@ function rentals_register_meta_boxes( $meta_boxes ) {
                 'id'   => 'address',
                 'name' => 'Domicilio',
                 'type' => 'text',
-                'placeholder' => 'Escriba el domicilio completo de la propiedad'
+                'placeholder' => 'Escriba el domicilio completo de la propiedad',
+                'required'=> true
             ],
             // Map field.
             [

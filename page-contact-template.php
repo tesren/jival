@@ -31,7 +31,14 @@
     <div class="col-12 col-lg-7 col-xxl-5">
         <h2 class="fs-2 text-center mb-3"><?php pll_e('Escríbenos') ?></h2>
 
-        <?= do_shortcode( '[contact-form-7 id="1ba88c6" title="Formulario de contacto 1"]' ) ?>
+        <?php 
+            if( pll_current_language() == 'es' ){
+                echo do_shortcode( '[contact-form-7 id="5a7c726" title="Formulario de contacto ESP"]' );
+            }
+            else{
+                echo do_shortcode( '[contact-form-7 id="7531a21" title="Formulario de contacto ENG"]' );
+            }
+        ?>    
     </div>
 
 </div>

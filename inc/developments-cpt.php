@@ -80,6 +80,7 @@ function developments_register_meta_boxes( $meta_boxes ) {
             [
                 'name'            => 'Moneda',
                 'id'              => 'currency',
+                'required'=> true,
                 'type'            => 'radio',
                 // Array of 'value' => 'Label' pairs
                 'options'         => array(
@@ -204,6 +205,7 @@ function developments_register_meta_boxes( $meta_boxes ) {
                 'id'   => 'address',
                 'name' => 'Domicilio',
                 'type' => 'text',
+                'required'=> true,
                 'placeholder' => 'Escriba el domicilio completo de la propiedad'
             ],
 

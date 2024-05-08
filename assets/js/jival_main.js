@@ -96,3 +96,35 @@ if(form_inputs){
   }
 
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  var navItemEsp = document.getElementById('menu-item-61');
+  var navItemEng = document.getElementById('menu-item-71');
+
+  if (navItemEsp) {
+      var iconElement = document.createElement('i');
+      iconElement.className = 'fa-solid fa-earth-americas me-1';
+
+      var linkEsp = navItemEsp.querySelector('a');
+
+      if (linkEsp) {
+          linkEsp.insertBefore(iconElement, linkEsp.firstChild);
+      }else{
+          console.log('No se encontró el elemento en Español');
+      }
+
+  }
+
+  if(navItemEng){
+      var iconElement = document.createElement('i');
+      iconElement.className = 'fa-solid fa-earth-americas me-1';
+
+      var linkEng = navItemEng.querySelector('a');
+
+      if (linkEng) {
+          linkEng.insertBefore(iconElement.cloneNode(true), linkEng.firstChild);
+      }else{
+          console.log('No se encontró el elemento en Inglés');
+      }
+  }
+});

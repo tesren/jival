@@ -239,7 +239,7 @@
     
                                 </div>
 
-                                <div class="bg-blue card-title mt-2 py-1 fw-light"><?= get_the_title( $listing->ID ) ?></div>
+                                <div class="bg-red card-title mt-2 py-1 fw-light"><?= get_the_title( $listing->ID ) ?></div>
 
                                 <div class="card-body pt-2">
 
@@ -284,7 +284,7 @@
 
         </section>
 
-        <a href="<?= get_post_type_archive_link( 'propiedad-en-venta' ) ?>" class="btn btn-light px-4 mb-5">
+        <a href="<?= get_post_type_archive_link( 'alojamiento' ) ?>" class="btn btn-light px-4 mb-5">
             <?php pll_e('Ver todas') ?>
         </a>
     </div>
@@ -302,7 +302,7 @@
         <div class="col-12 text-center align-self-center">
             <img class="img-fluid px-5" src="<?= get_template_directory_uri() ?>/assets/images/logo-riviera-maya.webp" alt="Logo de Riviera Maya">
             <h4 class="text-white my-3 fs-2 fw-light"><?php pll_e('Descubre los mejores desarrollos de la Riviera Maya') ?></h4>
-            <a href="#" class="btn btn-outline-light rounded-0 fw-light fs-5"><?php pll_e('Más información') ?></a>
+            <a href="<?= get_post_type_archive_link('desarrollos') ?>" class="btn btn-outline-light rounded-0 fw-light fs-5"><?php pll_e('Más información') ?></a>
         </div>
 
     </div>

@@ -8,6 +8,8 @@
     $agents = get_posts(array(
         'post_type' => 'agentes',
         'numberposts' => -1,
+        'orderby' => 'date', // Ordenar por fecha
+        'order' => 'ASC', // Ordenar en orden ascendente (el más viejo primero)
     ));
 
 ?>

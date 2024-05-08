@@ -80,14 +80,14 @@
                         <div class="col-11 col-lg-4 border-start border-danger mb-4 mb-lg-0 align-self-start">
                             <ul class="list-unstyled fs-4 fw-light">
                                 <?php if(rwmb_meta('bedrooms')): ?>
-                                    <li>
-                                        <i class="fa-solid text-red fa-bed"></i> <?= rwmb_meta('bedrooms') ?> <?php pll_e('recámaras') ?>
+                                    <li class="text-lowercase">
+                                        <i class="fa-solid text-red fa-bed"></i> <?= rwmb_meta('bedrooms') ?> <?php pll_e('Recámaras') ?>
                                     </li>
                                 <?php endif; ?>
 
                                 <?php if(rwmb_meta('bathrooms')): ?>
-                                    <li>
-                                        <i class="fa-solid text-red fa-bath"></i> <?= rwmb_meta('bathrooms') ?> <?php pll_e('baños') ?>
+                                    <li class="text-lowercase">
+                                        <i class="fa-solid text-red fa-bath"></i> <?= rwmb_meta('bathrooms') ?> <?php pll_e('Baños') ?>
                                     </li>
                                 <?php endif; ?>
 

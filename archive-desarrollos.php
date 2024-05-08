@@ -10,7 +10,7 @@
             <div class="row justify-content-center position-absolute top-0 start-0 h-100 z-3">
                 <div class="col-12 text-center text-white align-self-center">
                     <img class="col-10 col-lg-4 mb-3" src="<?= get_template_directory_uri() ?>/assets/images/logo-riviera-maya.webp" alt="Logo de la Riviera Maya">
-                    <h1 class="fw-light fs-1 px-5 px-lg-0"><?php pll_e('Descubre los mejores desarrollos de la riviera') ?></h1>
+                    <h1 class="fw-light fs-1 px-5 px-lg-0"><?php pll_e('Descubre los mejores desarrollos de la Riviera Maya') ?></h1>
                 </div>
             </div>
 

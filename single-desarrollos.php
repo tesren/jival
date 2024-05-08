@@ -68,7 +68,7 @@
             </div>
 
             <div class="col-12 col-lg-3 text-center align-self-center">
-                <div><?= rwmb_meta('status') ?></div>
+                <div><?php pll_e('Precios desde') ?></div>
                 <div class="fs-2 mb-2">$<?= number_format(rwmb_meta('price')) ?> <?= rwmb_meta('currency') ?></div>
                 <a href="#contact" class="btn btn-blue"><?php pll_e('Contacta un asesor') ?></a>
             </div>

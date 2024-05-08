@@ -58,11 +58,15 @@
             <i class="fa-regular fa-copyright"></i>
             2016 - <?php echo date('Y');?>
         </div>
-        <a href="#" class="d-block text-blue ms-3"><?php pll_e('Políticas de Privacidad')?></a>
+
+        <a href="<?= get_the_permalink( get_page_by_title( 'Aviso de Privacidad' ) ) ?>" class="d-block text-blue ms-3"><?= get_the_title( get_page_by_title( 'Aviso de Privacidad' ) ) ?></a>
     </div>
 
 </footer>
 
+<!-- <a href="https://wa.me/5213336850524?text=<?php pll_e('Hola, vengo del sitio web de Jival Bienes Raíces')  ?>" class="whatsapp_btn shadow-4" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp"></i>
+</a> -->
 
 <script src="<?php echo get_template_directory_uri()?>/assets/js/bootstrap.bundle.min.js" defer></script>
 <script src="<?php echo get_template_directory_uri()?>/assets/js/splide.min.js" defer></script>

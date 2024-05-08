@@ -57,15 +57,23 @@
                 <div class="row justify-content-evenly mb-6">
 
                     <div class="col-11 col-lg-7 border-start border-danger mb-4 mb-lg-0">
-                        <?= get_property_type(get_the_ID(), 'property_type') ?> <?php pll_e('en venta') ?>
+                        <?= get_property_type(get_the_ID(), 'rental-type') ?> <?php pll_e('en renta') ?>
                         <h1 class="fw-normal"><?= get_the_title() ?></h1>
 
                         <p class="fw-light"><?= get_the_content() ?></p>
                     </div>
 
                     <div class="col-12 col-lg-3 text-center align-self-center">
-                        <div class="fs-2 mb-2">$<?= number_format(rwmb_meta('price')) ?> <?= rwmb_meta('currency') ?> MXN <small class="fw-light"><?php pll_e('Por noche') ?></small></div>
-                        <a href="#contact" class="btn btn-blue"><?php pll_e('Contacta un asesor') ?></a>
+
+                        <?php if( rwmb_meta('price') ): ?>
+                            <div class="fs-3">$<?= number_format(rwmb_meta('price')) ?> MXN <small class="fw-light"><?php pll_e('Por noche') ?></small></div>
+                        <?php endif; ?>
+
+                        <?php if( rwmb_meta('price_month') ): ?>
+                            <div class="fs-3">$<?= number_format(rwmb_meta('price_month')) ?> MXN <small class="fw-light"><?php pll_e('Por mes') ?></small></div>
+                        <?php endif; ?>
+
+                        <a href="#contact" class="btn btn-blue mt-2"><?php pll_e('Contacta un asesor') ?></a>
                     </div>
 
                 </div>
@@ -79,14 +87,14 @@
                         <div class="col-11 col-lg-4 border-start border-danger mb-4 mb-lg-0 align-self-start">
                             <ul class="list-unstyled fs-4 fw-light">
                                 <?php if(rwmb_meta('bedrooms')): ?>
-                                    <li>
-                                        <i class="fa-solid text-red fa-bed"></i> <?= rwmb_meta('bedrooms') ?> <?php pll_e('recámaras') ?>
+                                    <li class="text-lowercase">
+                                        <i class="fa-solid text-red fa-bed"></i> <?= rwmb_meta('bedrooms') ?> <?php pll_e('Recámaras') ?>
                                     </li>
                                 <?php endif; ?>
 
                                 <?php if(rwmb_meta('bathrooms')): ?>
-                                    <li>
-                                        <i class="fa-solid text-red fa-bath"></i> <?= rwmb_meta('bathrooms') ?> <?php pll_e('baños') ?>
+                                    <li class="text-lowercase">
+                                        <i class="fa-solid text-red fa-bath"></i> <?= rwmb_meta('bathrooms') ?> <?php pll_e('Baños') ?>
                                     </li>
                                 <?php endif; ?>
 
@@ -220,7 +228,7 @@
                                         </p>
         
                                         <hr class="text-blue opacity-100">
-                                        <div class="text-blue fs-4">$<?= number_format($listing->price) ?> MXN <?php pll_e('por noche') ?></div>
+                                        <div class="text-blue fs-4">$<?= number_format($listing->price) ?> MXN <span class="text-lowercase"><?php pll_e('Por noche') ?></span></div>
                                     </div>
         
                                 </a>
