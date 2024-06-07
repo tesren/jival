@@ -98,7 +98,7 @@
                         <div class="card-body text-blue">
 
                             <h5 class="card-title mb-1 fs-4"><?= get_the_title($agent->ID) ?></h5>
-                            <p class="card-text mb-1 fw-light fs-5"><?= $agent->agent_position ?></p>
+                            <p class="card-text mb-1 fw-light fs-5"><?php pll_e($agent->agent_position) ?></p>
                             <a href="mailto:ma.inesvalencia@gmail.com" class="text-blue fw-light fs-6"><?= $agent->agent_email ?></a>
 
                             <?php if( isset($agent->agent_phone) ): ?>

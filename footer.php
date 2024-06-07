@@ -3,12 +3,30 @@
 
     <div class="row justify-content-evenly px-2">
 
-        <div class="col-11 col-lg-2 mb-5 mb-lg-0 align-self-center">
-            <img src="<?php echo get_template_directory_uri()?>/assets/images/jival-white-logo.webp" alt="Logo de Jival Bienes Raíces" class="w-100">
+        <div class="col-6 col-lg-2 mb-5 mb-lg-0 align-self-center">
 
-            <div class="text-center fs-5 my-2">
+            <picture>
+                <!-- Imagen para pantallas de escritorio -->
+                <source media="(min-width: 768px)" srcset="<?php echo get_template_directory_uri()?>/assets/images/jival-white-logo.webp">
+            
+                <!-- Imagen para pantallas de teléfono -->
+                <source media="(max-width: 767px)" srcset="<?php echo get_template_directory_uri()?>/assets/images/logo-jival-blanco-vertical.webp">
+            
+                <!-- Fallback para navegadores que no soportan <picture> -->
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/jival-white-logo.webp" alt="Logo de Jival Bienes Raíces" class="w-100">
+            </picture>
+
+            <div class="text-center fs-5 my-3 my-lg-2">
                 <a href="https://www.facebook.com/JivalBR" target="_blank" rel="noopener noreferrer" class="link-light text-decoration-none me-3">
                     <i class="fa-brands fa-facebook"></i>
+                </a>
+
+                <a href="https://www.instagram.com/jivalbienesraices" target="_blank" rel="noopener noreferrer" class="link-light text-decoration-none me-3">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.tiktok.com/@jivalbr" target="_blank" rel="noopener noreferrer" class="link-light text-decoration-none me-3">
+                    <i class="fa-brands fa-tiktok"></i>
                 </a>
 
                 <a href="https://www.youtube.com/@JivalBR/featured" target="_blank" rel="noopener noreferrer" class="link-light text-decoration-none">
@@ -40,7 +58,10 @@
         <div class="col-12 col-lg-3 text-center text-lg-start">
             <h6 class="fs-4"><?php pll_e('Domicilio')?></h6>
             <address class="fw-light fs-5">
-                <i class="fa-solid fa-location-dot"></i> <a href="https://maps.app.goo.gl/rqynXaCJgLKphkM37" class="link-light text-decoration-none">Centro Comercial Las Cañadas Local B1-A y B1-B, Zapopan, Jalisco, 45206</a>
+                <i class="fa-solid fa-location-dot"></i> 
+                <a href="https://maps.app.goo.gl/rqynXaCJgLKphkM37" class="link-light text-decoration-none">
+                    Community Center Las Cañadas, Bosques de la Cascada 6, Locales E13 y E14, Las Cañadas, CP. 46133, Zapopan, Jalisco.
+                </a>
             </address>
         </div>
 
@@ -64,9 +85,9 @@
 
 </footer>
 
-<!-- <a href="https://wa.me/5213336850524?text=<?php pll_e('Hola, vengo del sitio web de Jival Bienes Raíces')  ?>" class="whatsapp_btn shadow-4" target="_blank" rel="noopener noreferrer">
+<a href="https://wa.me/523336850524?text=<?php pll_e('Hola, vengo del sitio web de Jival Bienes Raíces')  ?>" class="whatsapp_btn shadow-4 z-3" target="_blank" rel="noopener noreferrer">
     <i class="fa-brands fa-whatsapp"></i>
-</a> -->
+</a>
 
 <script src="<?php echo get_template_directory_uri()?>/assets/js/bootstrap.bundle.min.js" defer></script>
 <script src="<?php echo get_template_directory_uri()?>/assets/js/splide.min.js" defer></script>

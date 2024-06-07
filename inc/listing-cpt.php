@@ -233,7 +233,14 @@ function listing_register_meta_boxes( $meta_boxes ) {
                 'clone'=> true,
                 'size' => 30,
             ],
-            
+            [
+                'name'    => 'Enlace de Youtube',
+                'id'      => 'youtube_link',
+                'type'    => 'text',
+                'placeholder'=> 'Enlace al video de Youtube de la propiedad',
+                'desc'=> 'Enlace al video de Youtube de la propiedad',
+                'size' => 45,
+            ],
             // More fields.
         ],
     ];

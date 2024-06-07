@@ -81,6 +81,25 @@
                 'walker'            => new WP_Bootstrap_Navwalker(),
             ) );
         ?>
+
+        <div class="text-center fs-5 my-3 my-lg-1">
+          <a href="https://www.facebook.com/JivalBR" target="_blank" rel="noopener noreferrer" class="text-blue text-decoration-none me-3 me-lg-1">
+              <i class="fa-brands fa-facebook"></i>
+          </a>
+
+          <a href="https://www.instagram.com/jivalbienesraices" target="_blank" rel="noopener noreferrer" class="text-blue text-decoration-none me-3 me-lg-1">
+              <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="https://www.tiktok.com/@jivalbr" target="_blank" rel="noopener noreferrer" class="text-blue text-decoration-none me-3 me-lg-1">
+              <i class="fa-brands fa-tiktok"></i>
+          </a>
+
+          <a href="https://www.youtube.com/@JivalBR/featured" target="_blank" rel="noopener noreferrer" class="text-blue text-decoration-none me-lg-1">
+              <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+
       </div>
 
     </div>

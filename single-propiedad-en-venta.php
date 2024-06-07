@@ -20,9 +20,19 @@
                 <!-- Imagenes -->
                 <div class="row justify-content-cente mb-4 position-relative">
 
-                    <a href="#gallery-1" class="btn btn-light ms-3 ms-lg-5 mb-3 mb-lg-5 position-absolute start-0 bottom-0 col-4 col-lg-1">
-                        <i class="fa-solid fa-image"></i> <?php pll_e('Ver galería') ?>
-                    </a>
+                    <?php if( rwmb_meta('youtube_link') ): ?>
+                        <a href="<?= rwmb_meta('youtube_link') ?>" data-fancybox="gallery" class="d-none">
+                            <div class="fs-5"><?php pll_e('Ver Video') ?></div>                     
+                        </a>
+
+                        <a href="#gallery-1" class="btn btn-light ms-3 ms-lg-5 mb-3 mb-lg-5 position-absolute start-0 bottom-0 col-5 col-lg-2 z-3">
+                            <i class="fa-solid fa-photo-film"></i> <?php pll_e('Ver video y galería') ?>
+                        </a>
+                    <?php else: ?>
+                        <a href="#gallery-1" class="btn btn-light ms-3 ms-lg-5 mb-3 mb-lg-5 position-absolute start-0 bottom-0 col-4 col-lg-1 z-3">
+                            <i class="fa-solid fa-image"></i> <?php pll_e('Ver galería') ?>
+                        </a>
+                    <?php endif; ?>
 
                     <div class="col-12 col-lg-6 p-1">
                         <img src="<?= $images[0]['url'] ?>" alt="Galería de <?= get_the_title() ?>" data-fancybox="gallery" class="w-100 single-main-img">
@@ -105,7 +115,7 @@
 
                                 <?php if(rwmb_meta('lot_area')): ?>
                                     <li>
-                                        <i class="fa-solid text-red fa-home"></i> <?= rwmb_meta('lot_area') ?> m²
+                                        <i class="fa-solid text-red fa-maximize"></i> <?= rwmb_meta('lot_area') ?> m²
                                     </li>
                                 <?php endif; ?>
 

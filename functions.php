@@ -79,6 +79,15 @@ function change_my_title( $title ){
 	elseif( $title == 'Archivos: <span>Desarrollos</span>' ){
 		$title = "Desarrollos inmobiliarios en la Riviera Maya";
 	}
+	elseif( $title == 'Archives: <span>Desarrollos</span>' ){
+		$title = "Real Estate Developments in Riviera Maya";
+	}
+	elseif($title == 'Archives: <span>Propiedad</span>'){
+		$title = "Properties for sale";
+	}
+	elseif($title == 'Archives: <span>Alojamiento</span>'){
+		$title = "Properties for rent";
+	}
 
     return $title;
 }
@@ -270,7 +279,12 @@ function jival_set_strings_transtaltion(){
 		'zoom_room' => 'Zoom Room',
 		'coworking' => 'Coworking',
 		'meet_model_unit' => 'Conoce nuestra unidad modelo',
-		'more_for_sale' => 'Más propiedades en venta'
+		'more_for_sale' => 'Más propiedades en venta',
+		'director' => 'Socio Director',
+		'management' => 'Gerente de Operaciones',
+		'auxiliar' => 'Auxiliar de Dirección',
+		'real_estate_agent' => 'Asesor de Ventas',
+
 	];
 
 	$translations = [];

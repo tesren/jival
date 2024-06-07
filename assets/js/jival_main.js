@@ -99,7 +99,7 @@ if(form_inputs){
 
 document.addEventListener('DOMContentLoaded', function() {
   var navItemEsp = document.getElementById('menu-item-61');
-  var navItemEng = document.getElementById('menu-item-71');
+  var navItemEng = document.getElementById('menu-item-84');
 
   if (navItemEsp) {
       var iconElement = document.createElement('i');

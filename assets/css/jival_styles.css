@@ -237,12 +237,12 @@ li::marker{
     width:60px; 
     height:60px; 
     font-size:45px;
-    background-color: var(--blue);
+    background-color: #25d366;
     transition: 0.2s;
 }
 
 .whatsapp_btn:hover{
-    background-color: #25d366;
+    background-color: #1da850;
     transition: 0.3s;
 }
 
