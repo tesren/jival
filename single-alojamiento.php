@@ -73,7 +73,7 @@
                             <div class="fs-3">$<?= number_format(rwmb_meta('price_month')) ?> MXN <small class="fw-light"><?php pll_e('Por mes') ?></small></div>
                         <?php endif; ?>
 
-                        <a href="#contact" class="btn btn-blue mt-2"><?php pll_e('Contacta un asesor') ?></a>
+                        <a href="https://wa.me/523336850524?text=<?php pll_e('Hola, vengo del sitio web de Jival Bienes Raíces') ?>" target="_blank" rel="noopener noreferrer" class="btn btn-blue"><?php pll_e('Contacta un asesor') ?></a>
                     </div>
 
                 </div>

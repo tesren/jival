@@ -49,8 +49,17 @@
 <nav class="navbar navbar-expand-xl bg-white blue-text sticky-top shadow-4">
   <div class="container-fluid">
 
-    <a class="navbar-brand" href="<?= get_home_url();?>">
-      <img width="250px" src="<?php echo get_template_directory_uri();?>/assets/images/jival-logo.webp" alt="Logo de HeyHaus">
+    <a class="navbar-brand w-25" href="<?= get_home_url();?>">
+      <picture>
+        <!-- Imagen para pantallas de escritorio -->
+        <source media="(min-width: 768px)" srcset="<?php echo get_template_directory_uri()?>/assets/images/jival-logo.webp">
+    
+        <!-- Imagen para pantallas de teléfono -->
+        <source media="(max-width: 767px)" srcset="<?php echo get_template_directory_uri()?>/assets/images/logo-jival-vertical-azul.webp">
+    
+        <!-- Fallback para navegadores que no soportan <picture> -->
+        <img src="<?php echo get_template_directory_uri()?>/assets/images/jival-logo.webp" alt="Logo de Jival Bienes Raíces" class="col-6 col-lg-8 d-inline">
+      </picture>
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -61,7 +70,7 @@
 
       <div class="offcanvas-header">
         <div class="offcanvas-title" id="offcanvasNavbarLabel">
-            <img class="w-100 px-4" src="<?php echo get_template_directory_uri();?>/assets/images/jival-logo.webp" alt="Logo de HeyHaus">
+          <img class="w-100 px-4" src="<?php echo get_template_directory_uri();?>/assets/images/jival-logo.webp" alt="Logo de Jival Bienes Raíces">
         </div>
 
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>

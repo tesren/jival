@@ -284,7 +284,8 @@ function jival_set_strings_transtaltion(){
 		'management' => 'Gerente de Operaciones',
 		'auxiliar' => 'Auxiliar de Dirección',
 		'real_estate_agent' => 'Asesor de Ventas',
-
+		'devs_presales' => 'Desarrollos/Preventas',
+		'presales_desc' => 'Trabajamos con los mejores desarrolladores para ofrecerte excelentes oportunidades de vivienda o inversión ubicados en lugares increíbles'
 	];
 
 	$translations = [];

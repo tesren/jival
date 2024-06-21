@@ -2,22 +2,20 @@
 
     <section>
 
-        <div class="position-relative mb-5" style="height:60vh;">
-            <video class="w-100 h-100" style="object-fit:cover;" src="<?= get_template_directory_uri() ?>/assets/videos/riviera-maya-bg.mp4" muted autoplay loop poster="<?= get_template_directory_uri() ?>/assets/images/poster-riviera-maya.webp"></video>
-
+        <div class="position-relative mb-5">
+            <img src="<?= get_template_directory_uri() ?>/assets/images/jival-cerro.webp" class="w-100 object-fit-cover" alt="Jival Bienes Raíces" style="height:40vh;">
             <div class="fondo-azul"></div>
 
             <div class="row justify-content-center position-absolute top-0 start-0 h-100 z-3">
                 <div class="col-12 text-center text-white align-self-center">
-                    <img class="col-10 col-lg-4 mb-3" src="<?= get_template_directory_uri() ?>/assets/images/logo-riviera-maya.webp" alt="Logo de la Riviera Maya">
-                    <h1 class="fw-light fs-1 px-5 px-lg-0"><?php pll_e('Descubre los mejores desarrollos de la Riviera Maya') ?></h1>
+                    <h1 class="fw-light fs-0"><?php pll_e('Desarrollos/Preventas') ?></h1>
                 </div>
             </div>
 
         </div>
 
         <div class="container fs-5 fw-light mb-5">
-            <p><?php pll_e('Trabajamos con los mejores desarrolladores para ofrecerte excelentes oportunidades de vivienda o inversión ubicados en un increible lugar como la Riviera Maya.') ?></p>
+            <p><?php pll_e('Trabajamos con los mejores desarrolladores para ofrecerte excelentes oportunidades de vivienda o inversión ubicados en lugares increíbles') ?></p>
             <p class="mb-5 mb-lg-0"><?php pll_e('Vemos por un crecimiento integral y trascendente, cuyo soporte es el amor a la vida y el servicio. Tenemos como prioridad satisfacer las necesidades y deseos de nuestros clientes.') ?></p>
             <hr class="hr-red">
         </div>

@@ -94,7 +94,7 @@ function jival_agents_register_meta_boxes( $meta_boxes ) {
             ],
             
             
-            /* [
+            [
                 'id'               => 'agent_picture',
                 'name'             => 'Foto de perfil',
                 'type'             => 'image_advanced',
@@ -111,7 +111,7 @@ function jival_agents_register_meta_boxes( $meta_boxes ) {
 
                 // Image size that displays in the edit page.
                 'image_size'       => 'large',
-            ], */
+            ],
             
             
             // More fields.

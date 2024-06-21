@@ -76,7 +76,7 @@
                     <div class="col-12 col-lg-3 text-center align-self-center">
                         <div><?= rwmb_meta('status') ?></div>
                         <div class="fs-2 mb-2">$<?= number_format(rwmb_meta('price')) ?> <?= rwmb_meta('currency') ?></div>
-                        <a href="#contact" class="btn btn-blue"><?php pll_e('Contacta un asesor') ?></a>
+                        <a href="https://wa.me/523336850524?text=<?php pll_e('Hola, vengo del sitio web de Jival Bienes Raíces') ?>" target="_blank" rel="noopener noreferrer" class="btn btn-blue"><?php pll_e('Contacta un asesor') ?></a>
                     </div>
 
                 </div>

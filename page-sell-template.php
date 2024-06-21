@@ -74,27 +74,25 @@
     <p><?php pll_e('Promocionamos las propiedades en los mejores portales inmobiliarios. Colaboramos con otras inmobiliarias para lograr mayor rapidez en las ventas.') ?></p>
 </div>
 
-<div class="container row mb-6">
+<div class="container row mb-6 justify-content-center">
 
     <h4 class="text-center fs-2 mb-4 mb-lg-5"><?php pll_e('Conoce a nuestro equipo') ?></h4>
 
     <?php foreach($agents as $agent): ?>
-        <div class="col-12 col-lg-4">
+        <div class="col-12 col-lg-3">
 
             <div class="card mb-3 shadow-4 bg-light rounded-3">
                 <div class="row g-0">
 
-                    <div class="col-4 text-center align-self-center">
-                        <?php if($agent->agent_position == 'Socio Director'): ?>
-                            <i class="fa-solid text-red fa-4x fa-suitcase"></i>
-                        <?php elseif($agent->agent_position == 'Asesor de Ventas'): ?>
-                            <i class="fa-solid text-red fa-4x fa-user-tie"></i>
-                        <?php else: ?>
-                            <i class="fa-solid text-red fa-4x fa-clipboard-list"></i>
+                    <div class="col-12 text-center align-self-center">
+                        <?php $profile_pic = rwmb_meta('agent_picture', ['limit'=>1, 'size'=>'medium_large'], $agent->ID); ?>
+                        
+                        <?php if($profile_pic): ?>
+                            <img src="<?= $profile_pic[0]['url'] ?>" alt="<?= get_the_title($agent->ID) ?>" class="w-100 object-fit-cover rounded-top" style="height:370px;">
                         <?php endif; ?>
                     </div>
 
-                    <div class="col-8">
+                    <div class="col-12">
                         <div class="card-body text-blue">
 
                             <h5 class="card-title mb-1 fs-4"><?= get_the_title($agent->ID) ?></h5>
