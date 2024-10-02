@@ -73,7 +73,7 @@
 </div>
 
 <!-- Propiedades destacadas -->
-<?php if( isset($featured_listings) ): ?>
+<?php if( count($featured_listings) > 0 ): ?>
     <div class="py-5 bg-red text-center">
         <hr class="opacity-100 mb-5">
 
@@ -182,7 +182,7 @@
 <?php endif; ?>
 
 <!-- Alojamientos destacados -->
-<?php if( isset($featured_rentals) ): ?>
+<?php if( count($featured_rentals) > 0 ): ?>
     <div class="py-5 bg-blue text-center">
         <hr class="opacity-100 mb-5">
 

@@ -60,7 +60,7 @@
             <address class="fw-light fs-5">
                 <i class="fa-solid fa-location-dot"></i> 
                 <a href="https://maps.app.goo.gl/rqynXaCJgLKphkM37" class="link-light text-decoration-none">
-                    Community Center Las Cañadas, Bosques de la Cascada 6, Locales E13 y E14, Las Cañadas, CP. 46133, Zapopan, Jalisco.
+                    Community Center Las Cañadas, Bosques de la Cascada 6, Locales E13 y E14, Las Cañadas, CP. 45133, Zapopan, Jalisco.
                 </a>
             </address>
         </div>

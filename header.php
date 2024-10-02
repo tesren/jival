@@ -25,6 +25,17 @@
     <?php endif; ?>
 
 
+    <!-- Google analytics tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0E29J6TH8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-M0E29J6TH8');
+    </script>
+
+
     <link rel="preload" href="<?php echo get_template_directory_uri() ?>/assets/css/bootstrap.min.css" as="style">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/bootstrap.min.css">
 
@@ -46,7 +57,7 @@
 
 <body <?php body_class(); ?> >
 
-<nav class="navbar navbar-expand-xl bg-white blue-text sticky-top shadow-4">
+<nav class="navbar navbar-expand-xxl bg-white blue-text sticky-top shadow-4">
   <div class="container-fluid">
 
     <a class="navbar-brand w-25" href="<?= get_home_url();?>">

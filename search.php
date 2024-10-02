@@ -116,8 +116,6 @@
     
 ?>
 
-    <?php// var_dump($query); ?>
-
     <?php if($query -> have_posts() ):?>
 
         <div class="py-5 mb-5" style="background-image:url('<?= get_template_directory_uri().'/assets/images/forest.webp' ?>');">
@@ -250,7 +248,7 @@
         <div class="container row justify-content-evenly">
             <?php foreach($more_listings as $listing): ?>
 
-                <div class="col-12 col-lg-4 mb-4 mb-lg-5 shadow-4 px-0 rounded-2 blog-card">
+                <div class="col-12 col-lg-4 mb-5">
 
                     <?php
                         $rental_gallery = rwmb_meta('listing_gallery', ['size'=>'medium_large', 'limit'=>1], $listing->ID);
@@ -276,7 +274,7 @@
                         }
                     ?>
 
-                    <a href="<?= get_the_permalink( $listing->ID ) ?>" class="card rounded-0 text-decoration-none border-0">
+                    <a href="<?= get_the_permalink( $listing->ID ) ?>" class="card rounded-0 text-decoration-none border-0 shadow-4">
 
                         <div class="position-relative">
                             <div class="position-absolute start-50 top-0 bg-light text-blue z-3 px-2 py-1 rounded-2" style="transform:translate(-50%, -50%);">
@@ -343,10 +341,10 @@
 
         <div class="row justify-content-center">
             <?php foreach($developments as $dev): ?>
-                <div class="col-11 col-lg-10 col-xl-9 mb-4 mb-lg-5 shadow-4 px-0 rounded-2 blog-card position-relative z-2">
+                <div class="col-11 col-lg-10 col-xl-9 mb-4 mb-lg-5 position-relative z-2">
 
                     <a href="<?= get_the_permalink($dev->ID); ?>" class="text-decoration-none">
-                        <div class="card w-100 text-dark fw-normal position-relative">
+                        <div class="card w-100 text-dark fw-normal position-relative shadow-4">
 
                             <div class="badge bg-blue position-absolute top-0 start-0 ms-3 mt-3 z-3">
                                 <?php get_property_type($dev->ID , 'property_type') ?>

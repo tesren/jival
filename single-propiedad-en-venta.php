@@ -101,6 +101,12 @@
                                     </li>
                                 <?php endif; ?>
 
+                                <?php if(rwmb_meta('half_baths')): ?>
+                                    <li class="text-lowercase">
+                                        <i class="fa-solid text-red fa-sink"></i> <?= rwmb_meta('half_baths') ?> <?php pll_e('Medios Baños') ?>
+                                    </li>
+                                <?php endif; ?>
+
                                 <?php if(rwmb_meta('parking')): ?>
                                     <li>
                                         <i class="fa-solid text-red fa-car"></i> <?= rwmb_meta('parking') ?>
@@ -122,7 +128,7 @@
                             </ul>
                         </div>
 
-                        <div class="col-11 col-lg-7">
+                        <div class="col-11 col-lg-5">
                             <ul class="fs-4 fw-light">
                                 <?php $amenities = rwmb_meta('amenities') ?>
 
@@ -130,6 +136,38 @@
                                     <li><?= $amt ?></li>
                                 <?php endforeach; ?>
                             </ul>
+                        </div>
+
+                        <div class="col-11 col-lg-2 align-self-center text-center text-lg-start">
+                            <?php $descr = get_the_excerpt(); ?>
+                            <form action="<?= get_template_directory_uri(); ?>/inc/converttopdf.php" method="post">
+                                <?= wp_nonce_field() ?>
+                                <input type="hidden" name="titulo" value="<?= the_title(); ?>">
+                                <input type="hidden" name="descripcion" value="<?= $descr; ?>">
+                                <input type="hidden" name="region" value="<?= rwmb_meta('address'); ?>">
+                                <input type="hidden" name="precio" value="<?= rwmb_meta('price'); ?>">
+                                <input type="hidden" name="currency" value="<?= rwmb_meta('currency'); ?>">
+                                <input type="hidden" name="bedrooms" value="<?= rwmb_meta('bedrooms'); ?>">
+                                <input type="hidden" name="bathrooms" value="<?= rwmb_meta('bathrooms'); ?>">
+                                <input type="hidden" name="half_baths" value="<?= rwmb_meta('half_baths'); ?>">
+                                <input type="hidden" name="const" value="<?= rwmb_meta('construction'); ?>">
+                                <input type="hidden" name="lote" value="<?= rwmb_meta('lot_area'); ?>">
+                                <input type="hidden" name="amenities" value="<?php foreach($amenities as $amt){ echo $amt.', '; } ?>">
+                                <input type="hidden" name="imagen" value="<?= $images[0]['url']; ?>">
+                                <input type="hidden" name="imagen2" value="<?= $images[1]['url']; ?>">
+                                <input type="hidden" name="imagen3" value="<?= $images[2]['url']; ?>">
+                                <input type="hidden" name="imagen4" value="<?= $images[3]['url']; ?>">
+                                <input type="hidden" name="imagen5" value="<?= $images[4]['url']; ?>">
+                                <input type="hidden" name="imagen6" value="<?= $images[5]['url']; ?>">
+                                <input type="hidden" name="imagen7" value="<?= $images[6]['url']; ?>">
+                                <input type="hidden" name="imagen8" value="<?= $images[7]['url']; ?>">
+                                <input type="hidden" name="permalink" value="<?= get_the_permalink(); ?>">
+                                <input type="hidden" name="directory" value="<?php echo get_template_directory_uri(); ?>">
+
+                                <button type="submit" class="btn btn-blue" name="sendpdf">
+                                    <i class="fa-regular fa-file-pdf"></i> <?php pll_e('Descargar ficha técnica') ?>
+                                </button>
+                            </form>
                         </div>
 
                     </div>
