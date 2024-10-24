@@ -1,14 +1,20 @@
 <?php 
     $regiones = get_terms( array(
-        'taxonomy'          => 'regiones',
-        'parent'            => 0,
-        'hide_empty'        => false,
+        'taxonomy'   => 'regiones',
+        'hierarchical' => 1,
+        'parent' => 0,
+        'orderby' => 'name',
+        'order' => 'DESC',
+        'hide_empty' => true,
+        'ignore_term_order' => true
     ) );
 
     $propertiesType = get_terms( array(
         'taxonomy'          => 'property_type',
         'parent'            => 0,
-        'hide_empty'        => false,
+        'orderby' => 'description',
+        'order' => 'ASC',
+        'hide_empty' => false,
     ) ); 
 ?>
 

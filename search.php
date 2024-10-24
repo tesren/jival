@@ -79,10 +79,12 @@
         ),
     ));
 
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     
     $args = array(
         'post_type' => 'propiedad-en-venta',
         'posts_per_page' => 9,
+        'paged' => $paged,
         'meta_query' => array(
             array(
                 'key' => 'status',
@@ -113,6 +115,10 @@
     
 
     $query = new WP_Query($args);
+
+    $temp_query = $wp_query;
+    $wp_query = NULL;
+    $wp_query = $query;
     
 ?>
 
@@ -180,6 +186,10 @@
                                 $construction = rwmb_meta('construction');
                                 $lot_area = rwmb_meta('lot_area');
                             ?>
+
+                            <div class="text-center mb-2 fs-5 fw-light text-blue">
+                                <i class="fa-solid fa-location-dot"></i> <?= get_list_terms( get_the_ID(), 'regiones' ) ?>
+                            </div>
 
                             <div class="d-flex justify-content-center">
 
@@ -383,6 +393,11 @@
         </div>
     <?php endif; ?>
 
-    <?php wp_reset_postdata(); ?>
+    <?php 
+        wp_reset_postdata(); 
+        // Reset main query object
+        $wp_query = NULL;
+        $wp_query = $temp_query;
+    ?>
 
 <?php get_footer(); ?>

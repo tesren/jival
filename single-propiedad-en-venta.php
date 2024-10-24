@@ -70,7 +70,7 @@
                         <?= get_property_type(get_the_ID(), 'property_type') ?> <?php pll_e('en venta') ?>
                         <h1 class="fw-normal"><?= get_the_title() ?></h1>
 
-                        <p class="fw-light"><?= get_the_content() ?></p>
+                        <div class="fw-light"><?php the_content() ?></div>
                     </div>
 
                     <div class="col-12 col-lg-3 text-center align-self-center">

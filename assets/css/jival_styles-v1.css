@@ -247,6 +247,10 @@ li::marker{
     transition: 0.3s;
 }
 
+.grecaptcha-badge{
+    display: none;
+}
+
 @media (max-width: 992px) {
     .fs-0{
         font-size: 2.5rem;

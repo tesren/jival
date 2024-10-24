@@ -48,8 +48,8 @@
     <link rel="preload" href="<?php echo get_template_directory_uri() ?>/assets/css/splide.min.css" as="style">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/splide.min.css">
 
-    <link rel="preload" href="<?php echo get_template_directory_uri() ?>/assets/css/jival_styles.css" as="style">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/jival_styles.css">
+    <link rel="preload" href="<?php echo get_template_directory_uri() ?>/assets/css/jival_styles-v1.css" as="style">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/jival_styles-v1.css">
 
     <!-- CSS -->
     <?php wp_head(); ?>

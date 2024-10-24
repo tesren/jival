@@ -64,6 +64,10 @@
                                     $lot_area = rwmb_meta('lot_area');
                                 ?>
 
+                                <div class="text-center mb-2 fs-5 fw-light text-blue">
+                                    <i class="fa-solid fa-location-dot"></i> <?= get_list_terms( get_the_ID(), 'regiones' ) ?>
+                                </div>
+
                                 <div class="d-flex justify-content-center">
 
 

@@ -117,7 +117,7 @@ add_action( 'after_setup_theme', 'register_navwalker' );
  * Jival Custom Functions
 */
 function get_list_terms($postID, $taxonomy){
-	$terms_list = array_reverse(wp_get_post_terms( $postID, $taxonomy ) );
+	$terms_list = wp_get_post_terms( $postID, $taxonomy ) ;
 
 	$j =1;
 	if ( ! empty( $terms_list ) && ! is_wp_error( $terms_list ) ) {
