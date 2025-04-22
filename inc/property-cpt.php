@@ -1,7 +1,7 @@
 <?php
-add_action( 'init', 'listing_register_post_type' );
+add_action( 'init', 'property_register_post_type' );
 
-function listing_register_post_type(){
+function property_register_post_type(){
 
     $labels = array(
         'menu_name'          =>  'Propiedades' ,
@@ -45,23 +45,80 @@ function listing_register_post_type(){
 
     );
 
-    register_post_type('propiedad-en-venta', $args);
+    register_post_type('propiedad', $args);
 
 }
 
-add_action('init', 'listing_register_post_type');
+add_action('init', 'property_register_post_type');
+
+
+function listings_custom_taxonomies(){
+
+    //add new taxonomi heirarchical
+    $labels = array(
+        'name' => 'Tipo de Propiedad', //Puede ser casas, depas, terrenos
+        'singular_name' => 'Tipo de Propiedad',
+        'search_items' => 'Buscar Tipos',
+        'all_items' => 'Todos los tipos',
+        'parent_item' => 'Tipo padre', 
+        'parent_item_colon' => 'Tipo padre:',
+        'edit_item' => 'Editar Tipo',
+        'update_item' => 'Editar tipo',
+        'add_new_item' => 'Agregar nuevo tipo', 
+        'new_item_name' => 'Nuevo Tipo de propiedad',
+        'manu_name' => 'Tipo de Propiedad'
+    );
+
+    $args = array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_in_menu' => true,
+        'show_ui' => true,
+        'show_admin_column' => true, //muestra u oculta la columna en vista admon para filtrar
+        'query_var' => true,
+        'rewrite' => array('slug' => 'tipo-propiedad') //Este parametro saldra en la URL
+    );
+
+    register_taxonomy('property_type', array('propiedad-en-venta', 'desarrollos', 'propiedad'), $args );
+
+    //add new taxonomy NOT heirarchical
+
+     register_taxonomy('regiones', array('propiedad-en-venta', 'propiedad'), array(
+        'label' => 'Áreas',
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_admin_column' => true, //muestra u oculta la columna en vista admon para filtrar
+        'query_var' => true,
+        'rewrite' => array('slug' => 'area'), //Este parametro saldra en la URL
+        'hierarchical' => true,
+    ));
 
 
 
-add_filter( 'rwmb_meta_boxes', 'listing_register_meta_boxes' );
+}
 
-function listing_register_meta_boxes( $meta_boxes ) {
+add_action('init', 'listings_custom_taxonomies');
+
+
+add_filter( 'rwmb_meta_boxes', 'propery_register_meta_boxes' );
+
+function propery_register_meta_boxes( $meta_boxes ) {
 
     $meta_boxes[] = [
         'title'      => 'Detalles',
-        'post_types' => 'propiedad-en-venta',
-
+        'post_types' => 'propiedad',
         'fields' => [
+            [
+                'name'    => '¿Está en venta o renta?',
+                'id'      => 'operation_type',
+                'type'    => 'radio',
+                'options' => [
+                    'venta' => 'Venta',
+                    'renta' => 'Renta',
+                ],
+                'inline'  => true,
+                'required' => true,
+            ],
             [
                 'name'  => 'Precio',
                 'desc'  => 'Precio de la propiedad',
@@ -69,60 +126,50 @@ function listing_register_meta_boxes( $meta_boxes ) {
                 'type'  => 'number',
                 'required'=> true,
                 'size' => 30,
+                'visible' => [ 'operation_type', '=', 'venta' ],
             ],
             [
                 'name'            => 'Moneda',
                 'id'              => 'currency',
                 'type'            => 'radio',
                 'required'=> true,
-
-                // Array of 'value' => 'Label' pairs
                 'options'         => array(
                     'USD'       => 'USD',
                     'MXN'       => 'MXN',
                 ),
+                'visible' => [ 'operation_type', '=', 'venta' ],
             ],
             [
-                    'name'       => 'Tipo propiedad',
-                    'id'         => 'taxonomy',
-                    'type'       => 'taxonomy',
-
-                    // Taxonomy slug.
-                    'taxonomy'   => 'property_type',
-
-                    // How to show taxonomy.
-                    'field_type' => 'radio_list',
+                'name'       => 'Tipo propiedad',
+                'id'         => 'taxonomy',
+                'type'       => 'taxonomy',
+                'taxonomy'   => 'property_type',
+                'field_type' => 'radio_list',
             ],
             [
                 'name'            => 'Disponibilidad',
                 'id'              => 'status',
                 'type'            => 'select',
                 'required'        => true,
-                // Array of 'value' => 'Label' pairs
                 'options'         => array(
                     'Disponible'  => 'Disponible',
                     'Apartado'    => 'Apartado',
                     'Vendido'     => 'Vendido',
                 ),
-                // Allow to select multiple value?
                 'multiple'        => false,
-                // Placeholder text
                 'placeholder'     => 'Elige una opción',
-                // Display "Select All / None" button?
                 'select_all_none' => false,
                 'size' => 30,
+                'visible' => [ 'operation_type', '=', 'venta' ],
             ],
             [
                 'name'       => 'Ubicación',
                 'id'         => 'location',
                 'type'       => 'taxonomy',
-                // Taxonomy slug.
                 'taxonomy'   => 'regiones',
-
-                // How to show taxonomy.
                 'field_type' => 'select_tree',
             ],
-             [
+            [
                 'name'  => 'Recámaras',
                 'desc'  => 'Solo numeros',
                 'id'    => 'bedrooms',
@@ -149,6 +196,7 @@ function listing_register_meta_boxes( $meta_boxes ) {
                 'id'    => 'construction',
                 'type'  => 'number',
                 'size' => 30,
+                'visible' => [ 'operation_type', '=', 'venta' ],
             ],
             [
                 'name'  => 'Lote',
@@ -156,6 +204,7 @@ function listing_register_meta_boxes( $meta_boxes ) {
                 'id'    => 'lot_area',
                 'type'  => 'number',
                 'size' => 30,
+                'visible' => [ 'operation_type', '=', 'venta' ],
             ],
             [
                 'name'            => 'Estacionamiento',
@@ -171,12 +220,46 @@ function listing_register_meta_boxes( $meta_boxes ) {
                     'Descubierto'      => 'Descubierto',
                     'Torre de estacionamiento'      => 'Torre de estacionamiento',
                 ],
+                'visible' => [ 'operation_type', '=', 'venta' ],
             ],
             [
                 'name' => 'Mostrar en Página de inicio',
                 'id'   => 'featured_listing',
                 'type' => 'checkbox',
                 'std'  => 0, // 0 or 1
+                'visible' => [ 'operation_type', '=', 'venta' ],
+            ],
+            // Campos solo para renta
+            [
+                'name'  => 'Precio por noche',
+                'desc'  => 'Precio por noche del Alojamiento en pesos mexicanos',
+                'id'    => 'price_night',
+                'type'  => 'number',
+                'size'  => 30,
+                'visible' => [ 'operation_type', '=', 'renta' ],
+            ],
+            [
+                'name'  => 'Precio por mes',
+                'desc'  => 'Precio por mes del Alojamiento en pesos mexicanos',
+                'id'    => 'price_month',
+                'type'  => 'number',
+                'size'  => 30,
+                'visible' => [ 'operation_type', '=', 'renta' ],
+            ],
+            [
+                'name'  => 'Huéspedes',
+                'desc'  => 'Cantidad máxima de personas admitidas',
+                'id'    => 'guests',
+                'type'  => 'number',
+                'size'  => 30,
+                'visible' => [ 'operation_type', '=', 'renta' ],
+            ],
+            [
+                'name' => 'Mostrar en Página de inicio',
+                'id'   => 'featured_rental',
+                'type' => 'checkbox',
+                'std'  => 0,
+                'visible' => [ 'operation_type', '=', 'renta' ],
             ],
             [
                 'name'    => 'Amenidades',
@@ -194,7 +277,6 @@ function listing_register_meta_boxes( $meta_boxes ) {
                 'desc'=> 'Enlace al video de Youtube de la propiedad',
                 'size' => 45,
             ],
-            // More fields.
         ],
     ];
 
@@ -203,7 +285,7 @@ function listing_register_meta_boxes( $meta_boxes ) {
     $meta_boxes[] = [
         
         'title' => 'Galería',
-        'post_types' => 'propiedad-en-venta',
+        'post_types' => 'propiedad',
 
         'fields' => [
             [
@@ -251,7 +333,7 @@ function listing_register_meta_boxes( $meta_boxes ) {
      $meta_boxes[] = [
         
         'title' => 'Mapa de Google',
-        'post_types' => 'propiedad-en-venta',
+        'post_types' => 'propiedad',
 
         'fields' => [
             // Address field.

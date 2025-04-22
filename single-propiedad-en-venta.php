@@ -152,6 +152,7 @@
                                 <input type="hidden" name="half_baths" value="<?= rwmb_meta('half_baths'); ?>">
                                 <input type="hidden" name="const" value="<?= rwmb_meta('construction'); ?>">
                                 <input type="hidden" name="lote" value="<?= rwmb_meta('lot_area'); ?>">
+                                <input type="hidden" name="prop_type" value="<?= get_property_type(get_the_ID(), 'property_type') ?>">
                                 <input type="hidden" name="amenities" value="<?php foreach($amenities as $amt){ echo $amt.', '; } ?>">
                                 <input type="hidden" name="imagen" value="<?= $images[0]['url']; ?>">
                                 <input type="hidden" name="imagen2" value="<?= $images[1]['url']; ?>">

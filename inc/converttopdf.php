@@ -203,7 +203,7 @@ if (isset($_POST['sendpdf'])) {
         </table>
 
         <div class="footer">
-            <img src="https://test.jival.com/wp-content/uploads/2024/07/jival-logo.jpg" alt="Logo"  style="width:50%; margin:15px 0px;">
+            <img src="https://jival.com/wp-content/uploads/2024/07/jival-logo.jpg" alt="Logo"  style="width:50%; margin:15px 0px;">
             <p>Para más información, visita: <a href="<?= $link ?>"><?= $link ?></a></p>
         </div>
 
