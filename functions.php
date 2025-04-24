@@ -98,7 +98,6 @@ add_filter( "get_the_archive_title", "change_my_title" );
 */
 
 require get_template_directory().'/inc/listing-cpt.php';
-require get_template_directory().'/inc/property-cpt.php';
 require get_template_directory().'/inc/rentals-cpt.php';
 require get_template_directory().'/inc/developments-cpt.php';
 require get_template_directory().'/inc/sales-team-cpt.php';

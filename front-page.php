@@ -270,8 +270,12 @@
                                         <?= substr(get_the_excerpt( $listing->ID ), 0, 150) ?>...
                                     </p>
 
-                                    <hr class="text-blue opacity-100">
-                                    <div class="text-blue fs-4">$<?= number_format($listing->price) ?> MXN por noche</div>
+                                    <?php $monthly_price = rwmb_meta('price_month'); ?>
+
+                                    <?php if( isset($monthly_price) ): ?>
+                                        <hr class="text-blue opacity-100">
+                                        <div class="text-blue text-center fs-4">$<?= number_format($monthly_price) ?> MXN <?php pll_e('por mes') ?></div>
+                                    <?php endif; ?>
                                 </div>
 
                             </a>

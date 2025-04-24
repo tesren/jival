@@ -96,14 +96,14 @@ function rentals_register_meta_boxes( $meta_boxes ) {
         'post_types' => 'alojamiento',
 
         'fields' => [
-            [
+            /* [
                 'name'  => 'Precio por noche',
                 'desc'  => 'Precio por noche del Alojamiento en pesos mexicanos',
                 'id'    => 'price',
                 'type'  => 'number',
                 'size'    => 30,
-                'required'=> true
-            ],
+                'required'=> false
+            ], */
             [
                 'name'  => 'Precio por mes',
                 'desc'  => 'Precio por mes del Alojamiento en pesos mexicanos',

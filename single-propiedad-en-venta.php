@@ -20,8 +20,15 @@
                 <!-- Imagenes -->
                 <div class="row justify-content-cente mb-4 position-relative">
 
-                    <?php if( rwmb_meta('youtube_link') ): ?>
-                        <a href="<?= rwmb_meta('youtube_link') ?>" data-fancybox="gallery" class="d-none">
+                    <?php 
+                        $youtube_link = rwmb_meta('youtube_link');
+                        if (strpos($youtube_link, 'shorts') !== false) {
+                            $youtube_link = str_replace('shorts', 'embed', $youtube_link);
+                        }
+                    ?>
+                    
+                    <?php if( $youtube_link ): ?>
+                        <a href="<?= $youtube_link ?>" data-fancybox="gallery" class="d-none">
                             <div class="fs-5"><?php pll_e('Ver Video') ?></div>                     
                         </a>
 

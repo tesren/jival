@@ -60,7 +60,9 @@
                         <?= get_property_type(get_the_ID(), 'rental-type') ?> <?php pll_e('en renta') ?>
                         <h1 class="fw-normal"><?= get_the_title() ?></h1>
 
-                        <p class="fw-light"><?= get_the_content() ?></p>
+                        <div class="fw-light">
+                            <?php the_content() ?>
+                        </div>
                     </div>
 
                     <div class="col-12 col-lg-3 text-center align-self-center">
@@ -257,8 +259,12 @@
                                             <?= substr(get_the_excerpt( $listing->ID ), 0, 150) ?>...
                                         </p>
         
-                                        <hr class="text-blue opacity-100">
-                                        <div class="text-blue fs-4">$<?= number_format($listing->price) ?> MXN <span class="text-lowercase"><?php pll_e('Por noche') ?></span></div>
+                                        <?php $monthly_price = $listing->price_month; ?>
+
+                                        <?php if( isset($monthly_price) ): ?>
+                                            <hr class="text-blue opacity-100">
+                                            <div class="text-blue text-center fs-4">$<?= number_format($monthly_price) ?> MXN <?php pll_e('por mes') ?></div>
+                                        <?php endif; ?>
                                     </div>
         
                                 </a>
